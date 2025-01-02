@@ -424,7 +424,8 @@ jobs:
         if: ${{ inputs.hub_and_spoke && !inputs.destroy }}
         with:
           displayName: 'Hub (Hub-and-Spoke) Deployment'
-          templateFilePath: './infra-as-code/bicep/modules/hubNetworking/hubNetworking.bicep'
+          # templateFilePath: './infra-as-code/bicep/modules/hubNetworking/hubNetworking.bicep'
+          templateFilePath: './config/custom-modules/hubNetworking.bicep'
           templateParametersFilePath: './config/custom-parameters/hubNetworking.parameters.all.json'
           managementGroupId: ''
           subscriptionId: '${{ env.CONNECTIVITY_SUBSCRIPTION_ID }}'
