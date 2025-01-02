@@ -81,4 +81,13 @@ runs:
         Remove-Item -Path $tempFolder -Force -Recurse
         Write-Host "Successfully copied the files from the release artifact to the target path $targetPath..."
 
+        $customModulesPath = "./custom/infra-as-code"
+        if (Test-Path $customModulesPath) {
+            Write-Host "Copying custom modules from $customModulesPath/*"
+            Copy-Item -Path $customModulesPath/* -Destination $targetFolderPath -Recurse -Force | Out-String | Write-Verbose
+        } else {
+            Write-Host "Custom modules path ($customModulesPath) does not exist."
+        }
+
+
       shell: pwsh
