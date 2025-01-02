@@ -12,5 +12,5 @@ runs:
     - name: Run Bicep Deploy
       uses: azure/powershell@v2
       with:
-        azPSVersion: 'latest'
+        azPSVersion: '12.5.0'
         inlineScript: ./accelerator/scripts/destroy-landing-zone.ps1 -WhatIfEnabled $${{ inputs.whatIfEnabled }}
