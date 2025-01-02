@@ -13,7 +13,7 @@ runs:
       id: firstDeployment
       uses: azure/powershell@v2
       with:
-        azPSVersion: 'latest'
+        azPSVersion: '12.5.0'
         inlineScript: |
           $managementGroupId = $env:MANAGEMENT_GROUP_ID
           $managementGroups = Get-AzManagementGroup
